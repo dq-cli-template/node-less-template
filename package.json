@@ -1,0 +1,41 @@
+{
+  "name": "@dq-cli/node-less-template",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "private":true,
+  "scripts": {
+    "lint:css": "stylelint *.less src/*.less --fix  --custom-syntax postcss-less",
+    "cm": "npx cz"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
+    "postcss-less": "^6.0.0",
+    "prettier": "2.6.2",
+    "stylelint": "^14.8.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^25.0.0",
+    "stylelint-order": "^5.0.0",
+    "stylelint-selector-no-empty": "^1.0.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "lint-staged": {
+    "**.js": "eslint  --fix",
+    "*.less": "stylelint --fix --custom-syntax postcss-less",
+    "postcss-less": "stylelint --fix",
+    "*.{js,css,md}": "prettier --write"
+  }
+}
